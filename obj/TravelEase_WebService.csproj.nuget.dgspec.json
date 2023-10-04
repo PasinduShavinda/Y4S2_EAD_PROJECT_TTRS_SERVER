@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pasindushv/Desktop/EAD-PROJECT-REPO/EAD_TravelEase_WebService/TravelEase_WebService/TravelEase_WebService.csproj": {}
+    "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {}
   },
   "projects": {
-    "/Users/pasindushv/Desktop/EAD-PROJECT-REPO/EAD_TravelEase_WebService/TravelEase_WebService/TravelEase_WebService.csproj": {
+    "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pasindushv/Desktop/EAD-PROJECT-REPO/EAD_TravelEase_WebService/TravelEase_WebService/TravelEase_WebService.csproj",
+        "projectUniqueName": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
         "projectName": "TravelEase_WebService",
-        "projectPath": "/Users/pasindushv/Desktop/EAD-PROJECT-REPO/EAD_TravelEase_WebService/TravelEase_WebService/TravelEase_WebService.csproj",
+        "projectPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
         "packagesPath": "/Users/pasindushv/.nuget/packages/",
-        "outputPath": "/Users/pasindushv/Desktop/EAD-PROJECT-REPO/EAD_TravelEase_WebService/TravelEase_WebService/obj/",
+        "outputPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pasindushv/.nuget/NuGet/NuGet.Config"
@@ -20,7 +20,7 @@
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.307/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,13 +39,29 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AspNetCore.Identity.MongoDbCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[7.0.1, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.21.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -67,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
         }
       }
     }
