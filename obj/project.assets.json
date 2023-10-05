@@ -2156,25 +2156,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/pasindushv/.nuget/packages/": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
       "projectName": "TravelEase_WebService",
-      "projectPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
-      "packagesPath": "/Users/pasindushv/.nuget/packages/",
-      "outputPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/pasindushv/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2237,7 +2238,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
