@@ -1,7 +1,7 @@
 ﻿using AspNetCore.Identity.MongoDbCore.Models;
 using MongoDbGenericRepository.Attributes;
 
-namespace TravelEase_WebService.Models
+namespace TravelEase_WebService.Models.UserManagement
 {
     [CollectionName("users")]
     public class ApplicationUser : MongoIdentityUser<Guid>

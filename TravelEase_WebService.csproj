@@ -13,6 +13,11 @@
     <None Remove="Controllers\UserManagement\" />
     <None Remove="Dtos\UserManagement\" />
     <None Remove="Models\UserManagement\" />
+    <None Remove="Controllers\TravellerManagement\" />
+    <None Remove="Dtos\TravellerManagement\" />
+    <None Remove="Models\TravellerManagament\" />
+    <None Remove="Models\DBSettings\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -21,6 +26,11 @@
     <Folder Include="Controllers\UserManagement\" />
     <Folder Include="Dtos\UserManagement\" />
     <Folder Include="Models\UserManagement\" />
+    <Folder Include="Controllers\TravellerManagement\" />
+    <Folder Include="Dtos\TravellerManagement\" />
+    <Folder Include="Models\TravellerManagament\" />
+    <Folder Include="Models\DBSettings\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.21.0" />

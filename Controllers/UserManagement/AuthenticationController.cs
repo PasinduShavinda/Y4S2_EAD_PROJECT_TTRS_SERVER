@@ -5,10 +5,10 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using TravelEase_WebService.Dtos;
-using TravelEase_WebService.Models;
+using TravelEase_WebService.Dtos.UserManagement;
+using TravelEase_WebService.Models.UserManagement;
 
-namespace TravelEase_WebService.Controllers
+namespace TravelEase_WebService.Controllers.UserManagement
 {
     [ApiController]
     [Route("api/v1/authenticate")]
