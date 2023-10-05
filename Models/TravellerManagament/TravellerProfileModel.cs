@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System.Text.Json.Serialization;
 
 namespace TravelEase_WebService.Models.TravellerManagement;
 
@@ -24,4 +23,6 @@ public class TravellerProfileModel {
     public string EmergencyContactName { get; set; } = string.Empty;
     public string RelationshipToTraveller { get; set; } = string.Empty;
     public string EmergencyContactNumber { get; set; } = string.Empty;
+    public bool IsActive { get; set; } = true;
+
 }
