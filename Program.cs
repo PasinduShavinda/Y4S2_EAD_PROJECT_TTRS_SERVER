@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using TravelEase_WebService.Models;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+using TravelEase_WebService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,14 +22,15 @@ var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
 {
     MongoDbSettings = new MongoDbSettings
     {
-        ConnectionString = "mongodb://localhost:27017",
-        //ConnectionString = "mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority",
+        //ConnectionString = "mongodb://localhost:27017",
+        ConnectionString = "mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority",
         DatabaseName = "eadprojectwdb"
     },
     IdentityOptionsAction = options =>
     {
         options.Password.RequireDigit = false;
         options.Password.RequiredLength = 8;
+
         options.Password.RequireNonAlphanumeric = true;
         options.Password.RequireLowercase = false;
 
@@ -75,6 +77,8 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// Inside Program.cs
+builder.Services.AddSingleton<ITrainService, TrainService>();
 
 var app = builder.Build();
 
