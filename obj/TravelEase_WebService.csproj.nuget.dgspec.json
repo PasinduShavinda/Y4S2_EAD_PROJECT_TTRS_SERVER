@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj": {
+    "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
         "projectName": "TravelEase_WebService",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\New folder (19)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",

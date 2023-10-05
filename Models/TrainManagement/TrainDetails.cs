@@ -1,6 +1,4 @@
-﻿// Models/TrainsDetails.cs
-// Models/Train.cs
-using System;
+﻿
 
 namespace TravelEase_WebService.TrainModels
 {

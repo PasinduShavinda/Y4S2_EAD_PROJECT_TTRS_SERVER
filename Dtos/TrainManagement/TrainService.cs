@@ -1,13 +1,6 @@
-﻿//namespace TravelEase_WebService.Dtos.TrainManagement
-// Services/TrainService.cs
-// Services/TrainService.cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using TravelEase_WebService.Models;
-using TravelEase_WebService.TrainModels;
+﻿using TravelEase_WebService.TrainModels;
 
-namespace TravelEase_WebService.Services
+namespace TravelEase_WebService.Dtos.TrainService
 {
     public class TrainService : ITrainService
     {
