@@ -71,6 +71,32 @@ public class MongoDBService
         return;
     }
 
+    // Activate Traveller Profile
+    public async Task<bool> ActivateAsync(string id)
+    {
+        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+
+        UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
+            .Set("IsActive", true);
+
+        var result1 = await _travellerProfilesCollection.UpdateOneAsync(filter, update);
+
+        return result1.ModifiedCount > 0;
+    }
+
+    // Deactivate Traveller Profile
+    public async Task<bool> DeactivateAsync(string id)
+    {
+        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+
+        UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
+            .Set("IsActive", false);
+
+        var result2 = await _travellerProfilesCollection.UpdateOneAsync(filter, update);
+
+        return result2.ModifiedCount > 0;
+    }
+
     //// UPDATE
     //public async Task UpdateAsync(string id, string movieId)
     //{

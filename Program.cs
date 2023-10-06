@@ -30,6 +30,7 @@ var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
         //ConnectionString = "mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority",
         DatabaseName = "eadprojectwdb"
     },
+
     IdentityOptionsAction = options =>
     {
         options.Password.RequireDigit = false;
