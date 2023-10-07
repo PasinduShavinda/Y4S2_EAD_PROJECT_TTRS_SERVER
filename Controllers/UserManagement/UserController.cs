@@ -25,7 +25,7 @@ public class UserController : Controller
     public async Task<List<RegisteredTravellerModel>> Get()
     {
 
-        var filter = Builders<RegisteredTravellerModel>.Filter.Exists(x => x.Nic, true);
+        var filter = Builders<RegisteredTravellerModel>.Filter.Ne(x => x.Nic, "");
 
         var projection = Builders<RegisteredTravellerModel>.Projection
             .Exclude("NormalizedUserName")
