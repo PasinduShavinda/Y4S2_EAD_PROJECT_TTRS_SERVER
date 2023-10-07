@@ -8,6 +8,8 @@ namespace TravelEase_WebService.Models.UserManagement
     {
         public string FullName { get; set; } = string.Empty;
         public string Nic { get; set; } = string.Empty;
+        public bool IsActive { get; set; } = true;
+
     }
 }
 

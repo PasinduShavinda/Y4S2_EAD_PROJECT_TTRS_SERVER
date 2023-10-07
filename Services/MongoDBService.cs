@@ -9,12 +9,15 @@ namespace TravelEase_WebService.Services;
 public class MongoDBService
 {
     private readonly IMongoCollection<TravellerProfileModel> _travellerProfilesCollection;
+    private readonly IMongoCollection<RegisteredTravellerModel> _registeredTravellerCollection;
 
     public MongoDBService(IOptions<MongoDBSettings> mongoDBSettings)
     {
         MongoClient client = new MongoClient(mongoDBSettings.Value.ConnectionURI);
         IMongoDatabase database = client.GetDatabase(mongoDBSettings.Value.DatabaseName);
-        _travellerProfilesCollection = database.GetCollection<TravellerProfileModel>(mongoDBSettings.Value.CollectionName);
+        _travellerProfilesCollection = database.GetCollection<TravellerProfileModel>(mongoDBSettings.Value.CollectionName1);
+        _registeredTravellerCollection = database.GetCollection<RegisteredTravellerModel>(mongoDBSettings.Value.CollectionName2);
+
     }
 
     // CREATE
@@ -71,30 +74,43 @@ public class MongoDBService
         return;
     }
 
-    // Activate Traveller Profile
-    public async Task<bool> ActivateAsync(string id)
+    // Activate Traveller Account
+    public async Task<bool> ActivateAsync(string Nic)
     {
-        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+        FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
 
-        UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
+        UpdateDefinition<RegisteredTravellerModel> update = Builders<RegisteredTravellerModel>.Update
             .Set("IsActive", true);
 
-        var result1 = await _travellerProfilesCollection.UpdateOneAsync(filter, update);
+        var result1 = await _registeredTravellerCollection.UpdateOneAsync(filter, update);
 
         return result1.ModifiedCount > 0;
     }
 
-    // Deactivate Traveller Profile
-    public async Task<bool> DeactivateAsync(string id)
+    // Deactivate Traveller Account
+    public async Task<bool> DeactivateAsync(string Nic)
     {
-        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+        FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
 
-        UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
+        UpdateDefinition<RegisteredTravellerModel> update = Builders<RegisteredTravellerModel>.Update
             .Set("IsActive", false);
 
-        var result2 = await _travellerProfilesCollection.UpdateOneAsync(filter, update);
+        var result2 = await _registeredTravellerCollection.UpdateOneAsync(filter, update);
 
         return result2.ModifiedCount > 0;
+    }
+
+    // Get Registered Traveller Details
+    public async Task<List<RegisteredTravellerModel>> GetRegTravAsync(FilterDefinition<RegisteredTravellerModel> filter, ProjectionDefinition<RegisteredTravellerModel, RegisteredTravellerModel> projection)
+    {
+        var query = _registeredTravellerCollection.Find(filter);
+
+        if (projection != null)
+        {
+            query = query.Project(projection);
+        }
+
+        return await query.ToListAsync();
     }
 
     //// UPDATE

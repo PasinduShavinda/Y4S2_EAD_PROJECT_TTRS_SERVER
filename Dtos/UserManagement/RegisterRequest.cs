@@ -21,6 +21,8 @@ namespace TravelEase_WebService.Dtos.UserManagement
         public string ConfirmPassword { get; set; } = string.Empty;
 
         public string Role { get; set; } = string.Empty;
+
+        public bool IsActive { get; set; }
     }
 }
 

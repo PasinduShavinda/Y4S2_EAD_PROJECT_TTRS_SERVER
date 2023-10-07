@@ -6,7 +6,7 @@ namespace TravelEase_WebService.Controllers.TravellerManagement;
 
 //[Authorize(Roles = "Back Officer")]
 [ApiController]
-[Route("api/v1/traveller/profile")]
+[Route("api/v1/traveller/account")]
 public class ProfileActivationController : Controller
 {
 
@@ -18,15 +18,15 @@ public class ProfileActivationController : Controller
         _mongoDBService = mongoDBService;
     }
 
-    [HttpPut("{id}/activate")]
-    public async Task<IActionResult> Activate(string id)
+    [HttpPut("activate/{Nic}")]
+    public async Task<IActionResult> Activate(string Nic)
     {
 
-        var activated = await _mongoDBService.ActivateAsync(id);
+        var activated = await _mongoDBService.ActivateAsync(Nic);
 
         if (activated)
         {
-            return Ok(new { message = "Traveller Profile has been activated." });
+            return Ok(new { message = "Traveller Account has been Activated." });
         }
         else
         {
@@ -34,15 +34,15 @@ public class ProfileActivationController : Controller
         }
     }
 
-    [HttpPut("{id}/deactivate")]
-    public async Task<IActionResult> Deactivate(string id)
+    [HttpPut("deactivate/{Nic}")]
+    public async Task<IActionResult> Deactivate(string Nic)
     {
 
-        var deactivated = await _mongoDBService.DeactivateAsync(id);
+        var deactivated = await _mongoDBService.DeactivateAsync(Nic);
 
         if (deactivated)
         {
-            return Ok(new { message = "Traveller Profile has been deactivated." });
+            return Ok(new { message = "Traveller Account has been Deactivated." });
         }
         else
         {
