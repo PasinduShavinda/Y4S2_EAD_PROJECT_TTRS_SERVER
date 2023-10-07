@@ -6,39 +6,28 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TravellerManagement/TravellerProfileController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TravellerManagement/ProfileActivationController.cs">
     <Files>
-      <File FileName="Models/DBSettings/MongoDBSettings.cs" Line="3" Column="31" />
-      <File FileName="appsettings.json" Line="12" Column="41" />
-      <File FileName="appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="23" Column="1" />
-      <File FileName="Services/MongoDBService.cs" Line="15" Column="66" />
-      <File FileName="Models/TravellerManagament/TravellerProfileModel.cs" Line="19" Column="54" />
-      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" Line="5" Column="65" />
+      <File FileName="Controllers/UserManagement/AuthenticationController.cs" Line="25" Column="1" IsPinned="True" />
+      <File FileName="Dtos/UserManagement/LoginResponse.cs" Line="15" Column="1" IsPinned="True" />
+      <File FileName="Program.cs" Line="17" Column="1" IsPinned="True" />
+      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" Line="9" Column="16" />
+      <File FileName="Controllers/TravellerManagement/ProfileActivationController.cs" Line="14" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TravelEase_WebService">
             <Node name="TravelEase_WebService">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="TravellerManagement" expanded="True">
-                  <Node name="TravellerProfileController.cs" selected="True" />
+              <Node name="Controllers">
+                <Node name="TravellerManagement">
+                  <Node name="ProfileActivationController.cs" selected="True" />
                 </Node>
                 <Node name="UserManagement" expanded="True" />
               </Node>
               <Node name="Dtos" expanded="True">
-                <Node name="TravellerManagement" expanded="True" />
                 <Node name="UserManagement" expanded="True" />
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="DBSettings" expanded="True" />
-                <Node name="TravellerManagament" expanded="True" />
-              </Node>
-              <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
