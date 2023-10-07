@@ -56,7 +56,8 @@ namespace TravelEase_WebService.Controllers.UserManagement
                     FullName = request.FullName,
                     Email = request.Email,
                     ConcurrencyStamp = Guid.NewGuid().ToString(),
-                    UserName = request.Email,
+                    UserName = request.Username,
+                    Nic = request.Nic
 
                 };
                 var createUserResult = await _userManager.CreateAsync(userExists, request.Password);
