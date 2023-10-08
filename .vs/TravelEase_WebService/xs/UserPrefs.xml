@@ -3,6 +3,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+<<<<<<< HEAD
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Models/TrainManagement/TrainDetails.cs">
@@ -11,11 +12,25 @@
       <File FileName="Models/TrainManagement/TrainDetails.cs" Line="14" Column="40" />
       <File FileName="Dtos/TrainManagement/TrainService.cs" Line="1" Column="1" />
       <File FileName="Controllers/TrainManagemet/TrainsController.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TravellerManagament/TravellerProfileModel.cs">
+    <Files>
+      <File FileName="Models/TravellerManagament/TravellerProfileModel.cs" Line="19" Column="4" IsPinned="True" />
+      <File FileName="Services/MongoDBService.cs" Line="48" Column="4" IsPinned="True" />
+      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" Line="9" Column="16" IsPinned="True" />
+      <File FileName="Controllers/TravellerManagement/TravellerAccountActivationController.cs" Line="7" Column="38" />
+      <File FileName="Controllers/UserManagement/UserController.cs" Line="30" Column="31" />
+      <File FileName="Controllers/UserManagement/AuthenticationController.cs" />
+      <File FileName="Models/TravellerManagament/RegisteredTravellerModel.cs" Line="14" Column="11" />
+      <File FileName="Models/UserManagement/ApplicationUser.cs" />
+>>>>>>> origin/User-Mangement
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TravelEase_WebService">
+<<<<<<< HEAD
             <Node name="TravelEase_WebService">
               <Node name="Controllers" expanded="True">
                 <Node name="TrainManagemet" expanded="True" />
@@ -29,6 +44,20 @@
                   <Node name="TrainDetails.cs" selected="True" />
                 </Node>
               </Node>
+=======
+            <Node name="TravelEase_WebService" selected="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="TravellerManagement" expanded="True" />
+                <Node name="UserManagement" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="DBSettings" expanded="True" />
+                <Node name="TravellerManagament" expanded="True" />
+                <Node name="UserManagement" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True" />
+>>>>>>> origin/User-Mangement
             </Node>
           </Node>
         </State>

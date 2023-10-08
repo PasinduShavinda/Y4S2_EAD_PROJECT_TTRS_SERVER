@@ -4,15 +4,23 @@ using AspNetCore.Identity.MongoDbCore.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using TravelEase_WebService.Models;
+using TravelEase_WebService.Models.UserManagement;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+<<<<<<< HEAD
 using TravelEase_WebService.Dtos.TrainService;
 using TravelEase_WebService.Dtos.ReservationManagement;
 using TravelEase_WebService.Dtos.TrainSheduleManagemet;
 using MongoDB.Driver;
+=======
+using TravelEase_WebService.Models.DBSettings;
+using TravelEase_WebService.Services;
+>>>>>>> origin/User-Mangement
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
+builder.Services.AddSingleton<MongoDBService>();
 
 // Add services to the container.
 BsonSerializer.RegisterSerializer(new GuidSerializer(MongoDB.Bson.BsonType.String));
@@ -30,6 +38,7 @@ var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
         //ConnectionString = "mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority",
         DatabaseName = "eadprojectwdb"
     },
+
     IdentityOptionsAction = options =>
     {
         options.Password.RequireDigit = false;
@@ -91,8 +100,12 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+<<<<<<< HEAD
 builder.Services.AddSwaggerGen();
 // Inside Program.cs
+=======
+builder.Services.AddCors();
+>>>>>>> origin/User-Mangement
 
 
 builder.Services.AddSingleton<ITrainService, TrainService>();
@@ -100,12 +113,13 @@ builder.Services.AddSingleton<IReservationService, ReservationService>();
 builder.Services.AddSingleton<IScheduleService, SheduleService>();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseCors(builder =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+});
 
 app.UseHttpsRedirection();
 

@@ -51,6 +51,8 @@
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/AWSSDK.SecurityToken.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/DnsClient.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
@@ -63,6 +65,7 @@
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/MongoDB.Driver.Core.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/MongoDB.Libmongocrypt.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/MongoDbGenericRepository.dll
+/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/SharpCompress.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Snappier.dll
 /Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll

@@ -1,4 +1,4 @@
-﻿namespace TravelEase_WebService.Dtos
+﻿namespace TravelEase_WebService.Dtos.UserManagement
 {
     public class RegisterResponse
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TravelEase_WebService.Dtos
+namespace TravelEase_WebService.Dtos.UserManagement
 {
     public class LoginRequest
     {
