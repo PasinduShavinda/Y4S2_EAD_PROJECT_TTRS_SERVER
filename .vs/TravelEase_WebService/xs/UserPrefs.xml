@@ -1,19 +1,39 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{244CC991-420C-41C4-B98E-0AEA8AEB865F}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TrainManagement/TrainDetails.cs">
     <Files>
-      <File FileName="Program.cs" Line="27" Column="7" />
+      <File FileName="Program.cs" Line="110" Column="25" />
+      <File FileName="Models/TrainManagement/TrainDetails.cs" Line="14" Column="40" />
+      <File FileName="Dtos/TrainManagement/TrainService.cs" Line="1" Column="1" />
+      <File FileName="Controllers/TrainManagemet/TrainsController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__" />
+        <State name="__root__">
+          <Node name="TravelEase_WebService">
+            <Node name="TravelEase_WebService">
+              <Node name="Controllers" expanded="True">
+                <Node name="TrainManagemet" expanded="True" />
+              </Node>
+              <Node name="Dtos" expanded="True">
+                <Node name="ReservationManagement" expanded="True" />
+                <Node name="TrainManagement" expanded="True" />
+              </Node>
+              <Node name="Models">
+                <Node name="TrainManagement">
+                  <Node name="TrainDetails.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

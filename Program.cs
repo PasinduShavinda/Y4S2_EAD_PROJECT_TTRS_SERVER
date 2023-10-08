@@ -7,7 +7,10 @@ using Microsoft.IdentityModel.Tokens;
 using TravelEase_WebService.Models;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
-using TravelEase_WebService.Services;
+using TravelEase_WebService.Dtos.TrainService;
+using TravelEase_WebService.Dtos.ReservationManagement;
+using TravelEase_WebService.Dtos.TrainSheduleManagemet;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +27,7 @@ var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
     {
         //ConnectionString = "mongodb://localhost:27017",
         ConnectionString = "mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority",
+        //ConnectionString = "mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority",
         DatabaseName = "eadprojectwdb"
     },
     IdentityOptionsAction = options =>
@@ -74,12 +78,26 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder
+            .AllowAnyOrigin() // Allow requests from any origin
+            .AllowAnyMethod() // Allow any HTTP method (GET, POST, PUT, etc.)
+            .AllowAnyHeader(); // Allow any HTTP headers in the request
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Inside Program.cs
-builder.Services.AddSingleton<ITrainService, TrainService>();
 
+
+builder.Services.AddSingleton<ITrainService, TrainService>();
+builder.Services.AddSingleton<IReservationService, ReservationService>();
+builder.Services.AddSingleton<IScheduleService, SheduleService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -94,7 +112,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
+app.UseCors("AllowAll");
 app.MapControllers();
 
 app.Run();

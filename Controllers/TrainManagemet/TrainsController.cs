@@ -1,9 +1,7 @@
-﻿// Controllers/TrainController.cs
-using System;
-using System.Collections.Generic;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using TravelEase_WebService.TrainModels;
-using TravelEase_WebService.Services;
+using  TravelEase_WebService.Dtos.TrainService;
 
 namespace TravelEase_WebService.TrainController
 {
