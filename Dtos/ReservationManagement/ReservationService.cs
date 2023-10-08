@@ -37,9 +37,9 @@ namespace TravelEase_WebService.Dtos.ReservationManagement
         {
             var filter = Builders<Reservation>.Filter.Eq(r => r.Id, reservation.Id);
             var update = Builders<Reservation>.Update
-                .Set(r => r.SeatNumber, reservation.SeatNumber)
-                .Set(r => r.Class, reservation.Class)
-                .Set(r => r.Train, reservation.Train);
+                .Set(r => r.Seatcount1, reservation.Seatcount2)
+                .Set(r => r.Seatcount2, reservation.Seatcount2)
+                .Set(r => r.TrainName, reservation.TrainName);
 
             _reservationCollection.UpdateOne(filter, update);
         }
@@ -48,6 +48,10 @@ namespace TravelEase_WebService.Dtos.ReservationManagement
         {
             var filter = Builders<Reservation>.Filter.Eq(r => r.Id, id);
             _reservationCollection.DeleteOne(filter);
+        }
+        public IEnumerable<Reservation> GetReservationsByUserId(string userId)
+        {
+            return _reservationCollection.Find(reservation => reservation.userId == userId).ToList();
         }
     }
 }

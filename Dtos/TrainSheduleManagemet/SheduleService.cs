@@ -40,9 +40,9 @@ namespace TravelEase_WebService.Dtos.TrainSheduleManagemet
         {
             var filter = Builders<Schedule>.Filter.Eq(s => s.Id, schedule.Id);
             var update = Builders<Schedule>.Update
-                .Set(s => s.TrainName, schedule.TrainName)
-                .Set(s => s.DepartureCity, schedule.DepartureCity)
-                .Set(s => s.ArrivalCity, schedule.ArrivalCity);
+                .Set(s => s.reserved1seates, schedule.reserved1seates)
+                .Set(s => s.reserved2seates, schedule.reserved2seates);
+                
 
             _scheduleCollection.UpdateOne(filter, update);
         }

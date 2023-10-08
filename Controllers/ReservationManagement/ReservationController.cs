@@ -63,4 +63,11 @@ public class ReservationController : ControllerBase
         _reservationService.DeleteReservation(id);
         return NoContent();
     }
+
+    [HttpGet("byUserId/{userId}")]
+    public ActionResult<IEnumerable<Reservation>> GetReservationsByUserId(string userId)
+    {
+        var reservations = _reservationService.GetReservationsByUserId(userId);
+        return Ok(reservations);
+    }
 }

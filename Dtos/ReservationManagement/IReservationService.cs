@@ -11,5 +11,6 @@ namespace TravelEase_WebService.Dtos.ReservationManagement
         void AddReservation(Reservation reservation);
         void UpdateReservation(Reservation reservation);
         void DeleteReservation(Guid id);
+        IEnumerable<Reservation> GetReservationsByUserId(string userId);
     }
 }
