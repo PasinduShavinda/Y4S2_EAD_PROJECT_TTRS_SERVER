@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace TravelEase_WebService.Controllers.UserManagement;
 
-[Authorize(Roles = "Back Officer, Travel Agent")]
+//[Authorize(Roles = "Back Officer, Travel Agent")]
 [ApiController]
 [Route("api/v1/regtravellers")]
 public class UserController : Controller

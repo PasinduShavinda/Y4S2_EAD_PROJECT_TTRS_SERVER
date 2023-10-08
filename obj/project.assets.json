@@ -5776,11 +5776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+      "projectUniqueName": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
       "projectName": "TravelEase_WebService",
-      "projectPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+      "projectPath": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
       "packagesPath": "/Users/pasindushv/.nuget/packages/",
-      "outputPath": "/Users/pasindushv/Desktop/EAD-PROJ-REPO/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
+      "outputPath": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/pasindushv/.nuget/NuGet/NuGet.Config"

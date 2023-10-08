@@ -9,6 +9,9 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using TravelEase_WebService.Models.DBSettings;
 using TravelEase_WebService.Services;
+using TravelEase_WebService.Dtos.ReservationManagement;
+using TravelEase_WebService.Dtos.TrainService;
+using TravelEase_WebService.Dtos.TrainSheduleManagemet;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -81,6 +84,10 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors();
+
+builder.Services.AddSingleton<ITrainService, TrainService>();
+builder.Services.AddSingleton<IReservationService, ReservationService>();
+builder.Services.AddSingleton<IScheduleService, SheduleService>();
 
 var app = builder.Build();
 
