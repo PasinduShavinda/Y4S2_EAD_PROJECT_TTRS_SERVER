@@ -14,7 +14,6 @@
     <None Remove="Dtos\UserManagement\" />
     <None Remove="Models\UserManagement\" />
     <None Remove="Controllers\TravellerManagement\" />
-    <None Remove="Dtos\TravellerManagement\" />
     <None Remove="Models\TravellerManagament\" />
     <None Remove="Models\DBSettings\" />
     <None Remove="Services\" />
@@ -27,7 +26,6 @@
     <Folder Include="Dtos\UserManagement\" />
     <Folder Include="Models\UserManagement\" />
     <Folder Include="Controllers\TravellerManagement\" />
-    <Folder Include="Dtos\TravellerManagement\" />
     <Folder Include="Models\TravellerManagament\" />
     <Folder Include="Models\DBSettings\" />
     <Folder Include="Services\" />

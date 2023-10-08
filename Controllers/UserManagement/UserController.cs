@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace TravelEase_WebService.Controllers.UserManagement;
 
-//[Authorize(Roles = "Back Officer")]
+[Authorize(Roles = "Back Officer, Travel Agent")]
 [ApiController]
 [Route("api/v1/regtravellers")]
 public class UserController : Controller
@@ -52,40 +52,6 @@ public class UserController : Controller
 
     }
 
-    //[HttpGet("{id}")]
-    //public async Task<IActionResult> GetById(string id)
-    //{
-    //    var profile = await _mongoDBService.GetByIdAsync(id);
-    //    return Ok(profile);
-    //}
-
-    //[HttpPost]
-    //[Route("save")]
-    //public async Task<IActionResult> Post([FromBody] TravellerProfileModel travellerProfileModel)
-    //{
-    //    await _mongoDBService.CreateAsync(travellerProfileModel);
-    //    return CreatedAtAction(nameof(Get), new { id = travellerProfileModel.Id }, travellerProfileModel);
-    //}
-
-    //[HttpPut("{id}")]
-    //public async Task<IActionResult> Update(string id, [FromBody] TravellerProfileModel updatedProfile)
-    //{
-    //    await _mongoDBService.UpdateAsync(id, updatedProfile);
-    //    return NoContent();
-    //}
-
-    //[HttpDelete("{id}")]
-    //public async Task<IActionResult> Delete(string id)
-    //{
-    //    await _mongoDBService.DeleteAsync(id);
-    //    return NoContent();
-    //}
-
-    //[HttpPut("{id}")]
-    //public async Task<IActionResult> Update(string id, [FromBody] string movieId) {
-    //    await _mongoDBService.UpdateAsync(id, movieId);
-    //    return NoContent();
-    //}
 }
 
 

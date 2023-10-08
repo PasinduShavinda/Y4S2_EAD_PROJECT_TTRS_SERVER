@@ -20,17 +20,59 @@ public class MongoDBService
 
     }
 
-    // CREATE
-    public async Task CreateAsync(TravellerProfileModel travellerProfileModel) {
+    //// CREATE
+    //public async Task CreateAsync(TravellerProfileModel travellerProfileModel) {
 
-        await _travellerProfilesCollection.InsertOneAsync(travellerProfileModel);
-        return;
+    //    await _travellerProfilesCollection.InsertOneAsync(travellerProfileModel);
+    //    return;
 
+    //}
+
+    public async Task CreateAsync(string NIC, TravellerProfileModel travellerProfileModel)
+    {
+        // First, retrieve the RegisteredTraveller by Nic
+        var registeredTraveller = await _registeredTravellerCollection
+            .Find(x => x.Nic == NIC)
+            .FirstOrDefaultAsync();
+
+        if (registeredTraveller != null)
+        {
+            // Now, create a TravellerProfileModel by merging information
+            var newTravellerProfile = new TravellerProfileModel
+            {
+                NIC = NIC, // Use the selectedNic parameter
+                FullName = registeredTraveller.FullName,
+                UserName = registeredTraveller.UserName,
+                Email = registeredTraveller.Email,
+                IsActive = registeredTraveller.IsActive,
+   
+
+                // Set other properties like Gender, DOB, Nationality
+                Gender = travellerProfileModel.Gender,
+                DOB = travellerProfileModel.DOB,
+                Nationality = travellerProfileModel.Nationality,
+                ContactNumber = travellerProfileModel.ContactNumber,
+                Address = travellerProfileModel.Address,
+                PassportNumber = travellerProfileModel.PassportNumber,
+                PrefferedLanguage = travellerProfileModel.PrefferedLanguage,
+                EmergencyContactName = travellerProfileModel.EmergencyContactName,
+                RelationshipToTraveller = travellerProfileModel.RelationshipToTraveller,
+                EmergencyContactNumber = travellerProfileModel.EmergencyContactNumber,
+            };
+
+            await _travellerProfilesCollection.InsertOneAsync(newTravellerProfile);
+        }
+        else
+        {
+            throw new Exception("RegisteredTraveller not found by Nic.");
+        }
     }
 
+
     // GET
-    public async Task<List<TravellerProfileModel>> GetAsync() {
-        return await _travellerProfilesCollection.Find(new BsonDocument()).ToListAsync(); 
+    public async Task<List<TravellerProfileModel>> GetAsync()
+    {
+        return await _travellerProfilesCollection.Find(new BsonDocument()).ToListAsync();
     }
 
     // GET BY ID
@@ -46,8 +88,8 @@ public class MongoDBService
         FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
 
         UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
-            .Set("FirstName", updatedProfile.FirstName)
-            .Set("LastName", updatedProfile.LastName)
+            .Set("FullName", updatedProfile.FullName)
+            .Set("UserName", updatedProfile.UserName)
             .Set("Gender", updatedProfile.Gender)
             .Set("DOB", updatedProfile.DOB)
             .Set("Nationality", updatedProfile.Nationality)

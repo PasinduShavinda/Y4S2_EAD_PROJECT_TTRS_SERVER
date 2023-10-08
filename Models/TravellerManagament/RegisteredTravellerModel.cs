@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace TravelEase_WebService.Models.TravellerManagement;
 
+[BsonIgnoreExtraElements]
 public class RegisteredTravellerModel
 {
 

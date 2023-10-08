@@ -3,14 +3,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace TravelEase_WebService.Models.TravellerManagement;
 
+[BsonIgnoreExtraElements]
 public class TravellerProfileModel {
 
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    public string FirstName { get; set; } = string.Empty;
-    public string LastName { get; set; } = string.Empty;
+    public string FullName { get; set; } = string.Empty;
+    public string UserName { get; set; } = string.Empty;
     public string Gender { get; set; } = string.Empty;
     public string DOB { get; set; } = string.Empty;
     public string Nationality { get; set; } = string.Empty;
@@ -23,6 +24,6 @@ public class TravellerProfileModel {
     public string EmergencyContactName { get; set; } = string.Empty;
     public string RelationshipToTraveller { get; set; } = string.Empty;
     public string EmergencyContactNumber { get; set; } = string.Empty;
-    public bool IsActive { get; set; } = true;
+    public bool IsActive { get; set; }
 
 }
