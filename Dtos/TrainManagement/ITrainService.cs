@@ -10,5 +10,6 @@ public interface ITrainService
     void AddTrain(Train train);
     void UpdateTrain(Train train);
     void DeleteTrain(Guid id);
+    
 }
 

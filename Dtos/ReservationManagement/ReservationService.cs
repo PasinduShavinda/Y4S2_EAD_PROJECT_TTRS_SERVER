@@ -1,47 +1,53 @@
-﻿
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using MongoDB.Driver;
 using TravelEase_WebService.ReservationModels;
 
-namespace TravelEase_WebService.Dtos.ReservationManagement;
-
-public class ReservationService : IReservationService
+namespace TravelEase_WebService.Dtos.ReservationManagement
 {
-    private readonly List<Reservation> _reservation = new List<Reservation>();
-
-    public IEnumerable<Reservation> GetReservations()
+    public class ReservationService : IReservationService
     {
-        return _reservation;
-    }
+        private readonly IMongoCollection<Reservation> _reservationCollection;
 
-    public Reservation GetReservationById(Guid id)
-    {
-        return _reservation.FirstOrDefault(reservation => reservation.Id == id);
-    }
-
-    public void AddReservation(Reservation reservation)
-    {
-        reservation.Id = Guid.NewGuid();
-        _reservation.Add(reservation);
-    }
-
-    public void UpdateReservation(Reservation reservation)
-    {
-        var existingReservation = GetReservationById(reservation.Id);
-        if (existingReservation != null)
+        public ReservationService()
         {
-            // Update properties as needed
-            existingReservation.SeatNumber = reservation.SeatNumber;
-            existingReservation.Class = reservation.Class;
-            existingReservation.Train = reservation.Train;
+            var client = new MongoClient("mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority");
+            var database = client.GetDatabase("eadprojectwdb");
+            _reservationCollection = database.GetCollection<Reservation>("Reservations"); 
         }
-    }
 
-    public void DeleteReservation(Guid id)
-    {
-        var existingTrain = GetReservationById(id);
-        if (existingTrain != null)
+        public IEnumerable<Reservation> GetReservations()
         {
-            _reservation.Remove(existingTrain);
+            return _reservationCollection.Find(_ => true).ToList();
+        }
+
+        public Reservation GetReservationById(Guid id)
+        {
+            return _reservationCollection.Find(reservation => reservation.Id == id).FirstOrDefault();
+        }
+
+        public void AddReservation(Reservation reservation)
+        {
+            reservation.Id = Guid.NewGuid();
+            _reservationCollection.InsertOne(reservation);
+        }
+
+        public void UpdateReservation(Reservation reservation)
+        {
+            var filter = Builders<Reservation>.Filter.Eq(r => r.Id, reservation.Id);
+            var update = Builders<Reservation>.Update
+                .Set(r => r.SeatNumber, reservation.SeatNumber)
+                .Set(r => r.Class, reservation.Class)
+                .Set(r => r.Train, reservation.Train);
+
+            _reservationCollection.UpdateOne(filter, update);
+        }
+
+        public void DeleteReservation(Guid id)
+        {
+            var filter = Builders<Reservation>.Filter.Eq(r => r.Id, id);
+            _reservationCollection.DeleteOne(filter);
         }
     }
 }

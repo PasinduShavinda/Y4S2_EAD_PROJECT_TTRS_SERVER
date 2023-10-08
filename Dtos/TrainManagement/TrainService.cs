@@ -1,46 +1,53 @@
-﻿using TravelEase_WebService.TrainModels;
+﻿using System;
+using System.Collections.Generic;
+using MongoDB.Driver;
+using TravelEase_WebService.TrainModels;
 
 namespace TravelEase_WebService.Dtos.TrainService
 {
     public class TrainService : ITrainService
     {
-        private readonly List<Train> _trains = new List<Train>();
+        private readonly IMongoCollection<Train> _trainCollection;
+
+        public TrainService()
+        {
+            
+            var client = new MongoClient("mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority"); 
+            var database = client.GetDatabase("eadprojectwdb"); 
+            
+            _trainCollection = database.GetCollection<Train>("Trains"); 
+        }
 
         public IEnumerable<Train> GetTrains()
         {
-            return _trains;
+            return _trainCollection.Find(_ => true).ToList();
         }
 
         public Train GetTrainById(Guid id)
         {
-            return _trains.FirstOrDefault(train => train.Id == id);
+            return _trainCollection.Find(train => train.Id == id).FirstOrDefault();
         }
 
         public void AddTrain(Train train)
         {
-            train.Id = Guid.NewGuid();
-            _trains.Add(train);
+            _trainCollection.InsertOne(train);
         }
 
         public void UpdateTrain(Train train)
         {
-            var existingTrain = GetTrainById(train.Id);
-            if (existingTrain != null)
-            {
-                // Update properties as needed
-                existingTrain.TrainName = train.TrainName;
-                existingTrain.DepartureCity = train.DepartureCity;
-                existingTrain.ArrivalCity = train.ArrivalCity;
-            }
+            var filter = Builders<Train>.Filter.Eq(t => t.Id, train.Id);
+            var update = Builders<Train>.Update
+                .Set(t => t.TrainName, train.TrainName)
+                .Set(t => t.DepartureCity, train.DepartureCity)
+                .Set(t => t.ArrivalCity, train.ArrivalCity);
+
+            _trainCollection.UpdateOne(filter, update);
         }
 
         public void DeleteTrain(Guid id)
         {
-            var existingTrain = GetTrainById(id);
-            if (existingTrain != null)
-            {
-                _trains.Remove(existingTrain);
-            }
+            var filter = Builders<Train>.Filter.Eq(t => t.Id, id);
+            _trainCollection.DeleteOne(filter);
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿
 
-namespace TravelEase_WebService.TrainModels
+namespace TravelEase_WebService.SheduleModels
 {
-    public class Train
+    public class Schedule
     {
         public Guid Id { get; set; }
+        public string TrainId { get; set; }
         public string TrainName { get; set; }
         public string DepartureCity { get; set; }
         public string ArrivalCity { get; set; }
@@ -12,8 +13,10 @@ namespace TravelEase_WebService.TrainModels
         public string Arrivaltime { get; set; }
         public string class1reservation { get; set; }
         public string class2reservation { get; set; }
+        public int reserved1seates { get; set; }
+        public int reserved2seates { get; set; }
         public string[] StopStations { get; set; }
-
+        public string Date { get; set; }
 
         // Add other properties as needed
     }

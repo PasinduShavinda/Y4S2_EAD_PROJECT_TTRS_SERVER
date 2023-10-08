@@ -2156,26 +2156,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "/Users/sugandhihansikakalansooriya/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
+      "projectUniqueName": "/Users/sugandhihansikakalansooriya/Desktop/EAD Backend/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
       "projectName": "TravelEase_WebService",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\TravelEase_WebService.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\Desktop\\New folder (16)\\Y4S2_EAD_PROJECT_TTRS_SERVER\\obj\\",
+      "projectPath": "/Users/sugandhihansikakalansooriya/Desktop/EAD Backend/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+      "packagesPath": "/Users/sugandhihansikakalansooriya/.nuget/packages/",
+      "outputPath": "/Users/sugandhihansikakalansooriya/Desktop/EAD Backend/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/sugandhihansikakalansooriya/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2238,7 +2237,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
       }
     }
   }
