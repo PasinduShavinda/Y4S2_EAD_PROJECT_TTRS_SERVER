@@ -3,6 +3,7 @@ using TravelEase_WebService.Models.TravellerManagement;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TravelEase_WebService.Services;
 
@@ -20,53 +21,54 @@ public class MongoDBService
 
     }
 
-    //// CREATE
-    //public async Task CreateAsync(TravellerProfileModel travellerProfileModel) {
-
-    //    await _travellerProfilesCollection.InsertOneAsync(travellerProfileModel);
-    //    return;
-
-    //}
-
-    public async Task CreateAsync(string NIC, TravellerProfileModel travellerProfileModel)
+    // CREATE
+    public async Task CreateAsync(TravellerProfileModel travellerProfileModel)
     {
-        // First, retrieve the RegisteredTraveller by Nic
-        var registeredTraveller = await _registeredTravellerCollection
-            .Find(x => x.Nic == NIC)
-            .FirstOrDefaultAsync();
 
-        if (registeredTraveller != null)
-        {
-            // Now, create a TravellerProfileModel by merging information
-            var newTravellerProfile = new TravellerProfileModel
-            {
-                NIC = NIC, // Use the selectedNic parameter
-                FullName = registeredTraveller.FullName,
-                UserName = registeredTraveller.UserName,
-                Email = registeredTraveller.Email,
-                IsActive = registeredTraveller.IsActive,
-   
+        await _travellerProfilesCollection.InsertOneAsync(travellerProfileModel);
+        return;
 
-                // Set other properties like Gender, DOB, Nationality
-                Gender = travellerProfileModel.Gender,
-                DOB = travellerProfileModel.DOB,
-                Nationality = travellerProfileModel.Nationality,
-                ContactNumber = travellerProfileModel.ContactNumber,
-                Address = travellerProfileModel.Address,
-                PassportNumber = travellerProfileModel.PassportNumber,
-                PrefferedLanguage = travellerProfileModel.PrefferedLanguage,
-                EmergencyContactName = travellerProfileModel.EmergencyContactName,
-                RelationshipToTraveller = travellerProfileModel.RelationshipToTraveller,
-                EmergencyContactNumber = travellerProfileModel.EmergencyContactNumber,
-            };
-
-            await _travellerProfilesCollection.InsertOneAsync(newTravellerProfile);
-        }
-        else
-        {
-            throw new Exception("RegisteredTraveller not found by Nic.");
-        }
     }
+
+    //public async Task CreateAsync(string NIC, TravellerProfileModel travellerProfileModel)
+    //{
+    //    // First, retrieve the RegisteredTraveller by Nic
+    //    var registeredTraveller = await _registeredTravellerCollection
+    //        .Find(x => x.Nic == NIC)
+    //        .FirstOrDefaultAsync();
+
+    //    if (registeredTraveller != null)
+    //    {
+    //        // Now, create a TravellerProfileModel by merging information
+    //        var newTravellerProfile = new TravellerProfileModel
+    //        {
+    //            NIC = NIC, // Use the selectedNic parameter
+    //            FullName = registeredTraveller.FullName,
+    //            UserName = registeredTraveller.UserName,
+    //            Email = registeredTraveller.Email,
+    //            IsActive = registeredTraveller.IsActive,
+
+
+    //            // Set other properties like Gender, DOB, Nationality
+    //            Gender = travellerProfileModel.Gender,
+    //            DOB = travellerProfileModel.DOB,
+    //            Nationality = travellerProfileModel.Nationality,
+    //            ContactNumber = travellerProfileModel.ContactNumber,
+    //            Address = travellerProfileModel.Address,
+    //            PassportNumber = travellerProfileModel.PassportNumber,
+    //            PrefferedLanguage = travellerProfileModel.PrefferedLanguage,
+    //            EmergencyContactName = travellerProfileModel.EmergencyContactName,
+    //            RelationshipToTraveller = travellerProfileModel.RelationshipToTraveller,
+    //            EmergencyContactNumber = travellerProfileModel.EmergencyContactNumber,
+    //        };
+
+    //        await _travellerProfilesCollection.InsertOneAsync(newTravellerProfile);
+    //    }
+    //    else
+    //    {
+    //        throw new Exception("RegisteredTraveller not found by Nic.");
+    //    }
+    //}
 
 
     // GET
@@ -154,6 +156,22 @@ public class MongoDBService
 
         return await query.ToListAsync();
     }
+
+    // Get Registered Traveller Details By NIC
+    public async Task<RegisteredTravellerModel> GetRegTravByIdAsync(string Nic, ProjectionDefinition<RegisteredTravellerModel, RegisteredTravellerModel> projection)
+    {
+        //var filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
+        FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
+        var query = _registeredTravellerCollection.Find(filter);
+
+        if (projection != null)
+        {
+            query = query.Project(projection);
+        }
+
+        return await query.FirstOrDefaultAsync();
+    }
+
 
     //// UPDATE
     //public async Task UpdateAsync(string id, string movieId)

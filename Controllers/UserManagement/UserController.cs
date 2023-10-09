@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace TravelEase_WebService.Controllers.UserManagement;
 
-[Authorize(Roles = "Back Officer, Travel Agent")]
+//[Authorize(Roles = "Back Officer, Travel Agent")]
 [ApiController]
 [Route("api/v1/regtravellers")]
 public class UserController : Controller
@@ -16,7 +16,6 @@ public class UserController : Controller
 
     public UserController(MongoDBService mongoDBService)
     {
-
         _mongoDBService = mongoDBService;
     }
 
@@ -50,6 +49,33 @@ public class UserController : Controller
 
         return users;
 
+    }
+
+    [HttpGet("view/{Nic}")]
+    public async Task<IActionResult> GetById(string Nic)
+    {
+        var projection = Builders<RegisteredTravellerModel>.Projection
+            .Exclude("NormalizedUserName")
+            .Exclude("NormalizedEmail")
+            .Exclude("EmailConfirmed")
+            .Exclude("PasswordHash")
+            .Exclude("SecurityStamp")
+            .Exclude("ConcurrencyStamp")
+            .Exclude("PhoneNumber")
+            .Exclude("PhoneNumberConfirmed")
+            .Exclude("TwoFactorEnabled")
+            .Exclude("LockoutEnd")
+            .Exclude("LockoutEnabled")
+            .Exclude("AccessFailedCount")
+            .Exclude("Version")
+            .Exclude("CreatedOn")
+            .Exclude("Claims")
+            .Exclude("Logins")
+            .Exclude("Tokens");
+
+        var acc = await _mongoDBService.GetRegTravByIdAsync(Nic, projection);
+
+        return Ok(acc);
     }
 
 }

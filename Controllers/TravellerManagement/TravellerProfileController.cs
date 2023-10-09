@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TravelEase_WebService.Controllers.TravellerManagement;
 
-[Authorize(Roles = "Travel Agent")]
+//[Authorize(Roles = "Travel Agent")]
 [ApiController]
 [Route("api/v1/traveller")]
 public class TravellerProfileController : Controller {
@@ -30,26 +30,12 @@ public class TravellerProfileController : Controller {
         return Ok(profile);
     }
 
-    //[HttpPost]
-    //[Route("save")]
-    //public async Task<IActionResult> Post([FromBody] TravellerProfileModel travellerProfileModel) {
-    //    await _mongoDBService.CreateAsync(travellerProfileModel);
-    //    return CreatedAtAction(nameof(Get), new { id = travellerProfileModel.Id }, travellerProfileModel);
-    //}
-
     [HttpPost]
-    [Route("save/{NIC}")]
-    public async Task<IActionResult> Post(string NIC, [FromBody] TravellerProfileModel travellerProfileModel)
+    [Route("save")]
+    public async Task<IActionResult> Post([FromBody] TravellerProfileModel travellerProfileModel)
     {
-        try
-        {
-            await _mongoDBService.CreateAsync(NIC, travellerProfileModel);
-            return CreatedAtAction(nameof(Get), new { id = travellerProfileModel.NIC }, travellerProfileModel);
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
+        await _mongoDBService.CreateAsync(travellerProfileModel);
+        return CreatedAtAction(nameof(Get), new { id = travellerProfileModel.Id }, travellerProfileModel);
     }
 
 
@@ -65,9 +51,4 @@ public class TravellerProfileController : Controller {
         return NoContent();
     }
 
-    //[HttpPut("{id}")]
-    //public async Task<IActionResult> Update(string id, [FromBody] string movieId) {
-    //    await _mongoDBService.UpdateAsync(id, movieId);
-    //    return NoContent();
-    //}
 }

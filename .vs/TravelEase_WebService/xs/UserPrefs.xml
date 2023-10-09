@@ -1,42 +1,22 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{244CC991-420C-41C4-B98E-0AEA8AEB865F}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TravellerManagament/TravellerProfileModel.cs">
-    <Files>
-      <File FileName="Models/TravellerManagament/TravellerProfileModel.cs" Line="19" Column="4" IsPinned="True" />
-      <File FileName="Services/MongoDBService.cs" Line="48" Column="4" IsPinned="True" />
-      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" Line="9" Column="16" IsPinned="True" />
-      <File FileName="Controllers/TravellerManagement/TravellerAccountActivationController.cs" Line="7" Column="38" />
-      <File FileName="Controllers/UserManagement/UserController.cs" Line="30" Column="31" />
-      <File FileName="Controllers/UserManagement/AuthenticationController.cs" />
-      <File FileName="Models/TravellerManagament/RegisteredTravellerModel.cs" Line="14" Column="11" />
-      <File FileName="Models/UserManagement/ApplicationUser.cs" />
-    </Files>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TravelEase_WebService">
-            <Node name="TravelEase_WebService" selected="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TravellerManagement" expanded="True" />
-                <Node name="UserManagement" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True">
-                <Node name="DBSettings" expanded="True" />
-                <Node name="TravellerManagament" expanded="True" />
-                <Node name="UserManagement" expanded="True" />
-              </Node>
-              <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True" />
+            <Node name="TravelEase_WebService">
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
