@@ -3,7 +3,6 @@ using TravelEase_WebService.Models.TravellerManagement;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using Microsoft.AspNetCore.Mvc;
 
 namespace TravelEase_WebService.Services;
 
@@ -30,47 +29,6 @@ public class MongoDBService
 
     }
 
-    //public async Task CreateAsync(string NIC, TravellerProfileModel travellerProfileModel)
-    //{
-    //    // First, retrieve the RegisteredTraveller by Nic
-    //    var registeredTraveller = await _registeredTravellerCollection
-    //        .Find(x => x.Nic == NIC)
-    //        .FirstOrDefaultAsync();
-
-    //    if (registeredTraveller != null)
-    //    {
-    //        // Now, create a TravellerProfileModel by merging information
-    //        var newTravellerProfile = new TravellerProfileModel
-    //        {
-    //            NIC = NIC, // Use the selectedNic parameter
-    //            FullName = registeredTraveller.FullName,
-    //            UserName = registeredTraveller.UserName,
-    //            Email = registeredTraveller.Email,
-    //            IsActive = registeredTraveller.IsActive,
-
-
-    //            // Set other properties like Gender, DOB, Nationality
-    //            Gender = travellerProfileModel.Gender,
-    //            DOB = travellerProfileModel.DOB,
-    //            Nationality = travellerProfileModel.Nationality,
-    //            ContactNumber = travellerProfileModel.ContactNumber,
-    //            Address = travellerProfileModel.Address,
-    //            PassportNumber = travellerProfileModel.PassportNumber,
-    //            PrefferedLanguage = travellerProfileModel.PrefferedLanguage,
-    //            EmergencyContactName = travellerProfileModel.EmergencyContactName,
-    //            RelationshipToTraveller = travellerProfileModel.RelationshipToTraveller,
-    //            EmergencyContactNumber = travellerProfileModel.EmergencyContactNumber,
-    //        };
-
-    //        await _travellerProfilesCollection.InsertOneAsync(newTravellerProfile);
-    //    }
-    //    else
-    //    {
-    //        throw new Exception("RegisteredTraveller not found by Nic.");
-    //    }
-    //}
-
-
     // GET
     public async Task<List<TravellerProfileModel>> GetAsync()
     {
@@ -78,16 +36,16 @@ public class MongoDBService
     }
 
     // GET BY ID
-    public async Task<TravellerProfileModel> GetByIdAsync(string id)
+    public async Task<TravellerProfileModel> GetByIdAsync(string NIC)
     {
-        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("NIC", NIC);
         return await _travellerProfilesCollection.Find(filter).FirstOrDefaultAsync();
     }
 
     // UPDATE
-    public async Task<bool> UpdateAsync(string id, TravellerProfileModel updatedProfile)
+    public async Task<bool> UpdateAsync(string NIC, TravellerProfileModel updatedProfile)
     {
-        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("NIC", NIC);
 
         UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update
             .Set("FullName", updatedProfile.FullName)
@@ -112,8 +70,8 @@ public class MongoDBService
 
 
     // Delete
-    public async Task DeleteAsync(string id) {
-        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
+    public async Task DeleteAsync(string NIC) {
+        FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("NIC", NIC);
         await _travellerProfilesCollection.DeleteOneAsync(filter);
         return;
     }
@@ -160,7 +118,6 @@ public class MongoDBService
     // Get Registered Traveller Details By NIC
     public async Task<RegisteredTravellerModel> GetRegTravByIdAsync(string Nic, ProjectionDefinition<RegisteredTravellerModel, RegisteredTravellerModel> projection)
     {
-        //var filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
         FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
         var query = _registeredTravellerCollection.Find(filter);
 
@@ -171,15 +128,6 @@ public class MongoDBService
 
         return await query.FirstOrDefaultAsync();
     }
-
-
-    //// UPDATE
-    //public async Task UpdateAsync(string id, string movieId)
-    //{
-    //    FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("Id", id);
-    //    UpdateDefinition<TravellerProfileModel> update = Builders<TravellerProfileModel>.Update.AddToSet<string>("movieId", movieId);
-    //    await _travellerProfilesCollection.UpdateOneAsync(filter, update);
-    //}
 
 }
 

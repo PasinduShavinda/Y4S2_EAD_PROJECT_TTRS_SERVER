@@ -24,9 +24,9 @@ public class TravellerProfileController : Controller {
         return allProfiles;
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(string id) {
-        var profile = await _mongoDBService.GetByIdAsync(id);
+    [HttpGet("view/{NIC}")]
+    public async Task<IActionResult> GetById(string NIC) {
+        var profile = await _mongoDBService.GetByIdAsync(NIC);
         return Ok(profile);
     }
 
@@ -39,15 +39,15 @@ public class TravellerProfileController : Controller {
     }
 
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] TravellerProfileModel updatedProfile) {
-        await _mongoDBService.UpdateAsync(id, updatedProfile);
+    [HttpPut("update/{NIC}")]
+    public async Task<IActionResult> Update(string NIC, [FromBody] TravellerProfileModel updatedProfile) {
+        await _mongoDBService.UpdateAsync(NIC, updatedProfile);
         return NoContent();
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id) {
-        await _mongoDBService.DeleteAsync(id);
+    [HttpDelete("delete/{NIC}")]
+    public async Task<IActionResult> Delete(string NIC) {
+        await _mongoDBService.DeleteAsync(NIC);
         return NoContent();
     }
 
