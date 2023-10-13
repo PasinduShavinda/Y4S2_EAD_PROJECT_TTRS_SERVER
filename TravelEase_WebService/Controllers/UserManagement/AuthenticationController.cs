@@ -1,4 +1,11 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+// FileName: AuthenticationController.cs
+// FileType: Visual C# Source file
+// Author: IT20140298 Shavinda W.A.P
+// Description: Controller for user authentication and role management.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
@@ -22,6 +29,11 @@ namespace TravelEase_WebService.Controllers.UserManagement
             _userManager = userManager;
             _roleManager = roleManager;
         }
+        /// <summary>
+        /// Create a new role.
+        /// </summary>
+        /// <param name="request">The role creation request.</param>
+        /// <returns>An IActionResult representing the result of the role creation.</returns>
 
         [HttpPost]
         [Route("roles/add")]
@@ -32,7 +44,11 @@ namespace TravelEase_WebService.Controllers.UserManagement
 
             return Ok(new { message = "role created succesfully" });
         }
-
+        /// <summary>
+        /// Register a new user.
+        /// </summary>
+        /// <param name="request">The user registration request.</param>
+        /// <returns>An IActionResult representing the result of the registration.</returns>
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
@@ -43,6 +59,7 @@ namespace TravelEase_WebService.Controllers.UserManagement
             return result.Success ? Ok(result) : BadRequest(result.Message);
         }
 
+        // Private method for user registration logic
         private async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
         {
             try
@@ -81,6 +98,12 @@ namespace TravelEase_WebService.Controllers.UserManagement
             }
         }
 
+        /// <summary>
+        /// Login a user.
+        /// </summary>
+        /// <param name="request">The login request.</param>
+        /// <returns>An IActionResult representing the result of the login.</returns>
+        
         [HttpPost]
         [Route("login")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(LoginResponse))]
@@ -93,6 +116,7 @@ namespace TravelEase_WebService.Controllers.UserManagement
 
         }
 
+        // Private method for user login logic
         private async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
             try
@@ -101,7 +125,6 @@ namespace TravelEase_WebService.Controllers.UserManagement
                 var user = await _userManager.FindByEmailAsync(request.Email);
                 if (user is null) return new LoginResponse { Message = "Invalid email/password", Success = false };
 
-                //all is well if ew reach here
                 var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
@@ -133,7 +156,11 @@ namespace TravelEase_WebService.Controllers.UserManagement
                     Email = user?.Email,
                     Success = true,
                     UserId = user?.Id.ToString(),
-                    Role = roles.FirstOrDefault()
+                    Role = roles.FirstOrDefault(),
+                    Nic = user?.Nic,
+                    FullName = user?.FullName,
+                    UserName = user?.UserName,
+                    IsActive = user.IsActive
                 };
             }
             catch (Exception ex)

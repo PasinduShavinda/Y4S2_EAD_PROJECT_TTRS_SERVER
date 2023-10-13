@@ -1,4 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+// FileName: RegisterRequest.cs
+// FileType: Visual C# Source file
+// Author: IT20140298 Shavinda W.A.P
+// Description: Data transfer object for user registration request.
+//////////////////////////
+
+using System.ComponentModel.DataAnnotations;
 
 namespace TravelEase_WebService.Dtos.UserManagement
 {
@@ -23,6 +30,8 @@ namespace TravelEase_WebService.Dtos.UserManagement
         public string Role { get; set; } = string.Empty;
 
         public bool IsActive { get; set; }
+
+        public bool IsRequestSent { get; set; }
     }
 }
 
