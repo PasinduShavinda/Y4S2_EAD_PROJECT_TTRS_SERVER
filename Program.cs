@@ -1,4 +1,11 @@
-﻿using System.Text;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+// FileName: Program.cs
+// FileType: Visual C# Source file
+// Author: IT20140298 Shavinda W.A.P
+// Description: Main entry point of the TravelEase_WebService application.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System.Text;
 using AspNetCore.Identity.MongoDbCore.Extensions;
 using AspNetCore.Identity.MongoDbCore.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -21,7 +28,7 @@ BsonSerializer.RegisterSerializer(new DateTimeSerializer(MongoDB.Bson.BsonType.S
 BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
 
 
-//add mongoIdentityConfiguration...
+// Add Mongo Identity Configuration
 var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
 {
     MongoDbSettings = new MongoDbSettings
@@ -38,7 +45,7 @@ var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
         options.Password.RequireNonAlphanumeric = true;
         options.Password.RequireLowercase = false;
 
-        //lockout
+        // Lockout
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
         options.Lockout.MaxFailedAccessAttempts = 5;
 
@@ -92,7 +99,7 @@ app.UseCors(builder =>
     .AllowAnyHeader();
 });
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
