@@ -1,37 +1,52 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{244CC991-420C-41C4-B98E-0AEA8AEB865F}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.TravelEase__WebService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TravellerManagament/TravellerProfileModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Dtos/TrainSheduleManagemet/SheduleService.cs">
     <Files>
-      <File FileName="Models/TravellerManagament/TravellerProfileModel.cs" Line="19" Column="4" IsPinned="True" />
-      <File FileName="Services/MongoDBService.cs" Line="48" Column="4" IsPinned="True" />
-      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" Line="9" Column="16" IsPinned="True" />
-      <File FileName="Controllers/TravellerManagement/TravellerAccountActivationController.cs" Line="7" Column="38" />
-      <File FileName="Controllers/UserManagement/UserController.cs" Line="30" Column="31" />
+      <File FileName="Controllers/TravellerManagement/TravellerProfileController.cs" />
+      <File FileName="Services/MongoDBService.cs" />
+      <File FileName="Models/TravellerManagament/TravellerProfileModel.cs" />
+      <File FileName="Controllers/TravellerManagement/TravellerAccountActivationController.cs" />
+      <File FileName="Controllers/UserManagement/UserController.cs" />
       <File FileName="Controllers/UserManagement/AuthenticationController.cs" />
-      <File FileName="Models/TravellerManagament/RegisteredTravellerModel.cs" Line="14" Column="11" />
+      <File FileName="Models/TravellerManagament/RegisteredTravellerModel.cs" />
       <File FileName="Models/UserManagement/ApplicationUser.cs" />
+      <File FileName="Controllers/ReservationManagement/ReservationController.cs" />
+      <File FileName="Controllers/TrainManagemet/TrainsController.cs" />
+      <File FileName="Models/ReservationManagement/ReservationDetails.cs" />
+      <File FileName="Dtos/ReservationManagement/IReservationService.cs" />
+      <File FileName="Dtos/ReservationManagement/ReservationService.cs" />
+      <File FileName="Models/DBSettings/MongoDBSettings.cs" />
+      <File FileName="Models/TrainManagement/TrainDbContext.cs" />
+      <File FileName="Models/TrainManagement/TrainDetails.cs" />
+      <File FileName="Dtos/TrainManagement/ITrainService.cs" />
+      <File FileName="Dtos/TrainManagement/TrainService.cs" />
+      <File FileName="Models/TrainSheduleManagement/SheduleDetails.cs" />
+      <File FileName="Controllers/TrainSheduleManagemet/SheduleController.cs" />
+      <File FileName="Dtos/TrainSheduleManagemet/ISheduleService.cs" />
+      <File FileName="Dtos/TrainSheduleManagemet/SheduleService.cs" Line="73" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TravelEase_WebService">
-            <Node name="TravelEase_WebService" selected="True">
+            <Node name="TravelEase_WebService" expanded="True">
               <Node name="Controllers" expanded="True">
                 <Node name="TravellerManagement" expanded="True" />
-                <Node name="UserManagement" expanded="True" />
+              </Node>
+              <Node name="Dtos" expanded="True">
+                <Node name="TrainSheduleManagemet" expanded="True">
+                  <Node name="SheduleService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Models" expanded="True">
-                <Node name="DBSettings" expanded="True" />
-                <Node name="TravellerManagament" expanded="True" />
-                <Node name="UserManagement" expanded="True" />
+                <Node name="ReservationManagement" expanded="True" />
+                <Node name="TrainManagement" expanded="True" />
+                <Node name="TrainSheduleManagement" expanded="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>
           </Node>
@@ -39,4 +54,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>

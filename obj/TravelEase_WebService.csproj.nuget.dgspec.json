@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {}
+    "/Users/sugandhihansikakalansooriya/Desktop/untitled folder 3/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {}
   },
   "projects": {
-    "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {
+    "/Users/sugandhihansikakalansooriya/Desktop/untitled folder 3/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+        "projectUniqueName": "/Users/sugandhihansikakalansooriya/Desktop/untitled folder 3/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
         "projectName": "TravelEase_WebService",
-        "projectPath": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
-        "packagesPath": "/Users/pasindushv/.nuget/packages/",
-        "outputPath": "/Users/pasindushv/Desktop/EAD-REPO-CLONE/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
+        "projectPath": "/Users/sugandhihansikakalansooriya/Desktop/untitled folder 3/Y4S2_EAD_PROJECT_TTRS_SERVER/TravelEase_WebService.csproj",
+        "packagesPath": "/Users/sugandhihansikakalansooriya/.nuget/packages/",
+        "outputPath": "/Users/sugandhihansikakalansooriya/Desktop/untitled folder 3/Y4S2_EAD_PROJECT_TTRS_SERVER/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/pasindushv/.nuget/NuGet/NuGet.Config"
+          "/Users/sugandhihansikakalansooriya/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
