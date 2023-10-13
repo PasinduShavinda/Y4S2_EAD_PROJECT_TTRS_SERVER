@@ -87,7 +87,7 @@ builder.Services.AddCors();
 
 builder.Services.AddSingleton<ITrainService, TrainService>();
 builder.Services.AddSingleton<IReservationService, ReservationService>();
-builder.Services.AddSingleton<IScheduleService, SheduleService>();
+builder.Services.AddSingleton<IScheduleService, ScheduleService>();
 
 var app = builder.Build();
 
