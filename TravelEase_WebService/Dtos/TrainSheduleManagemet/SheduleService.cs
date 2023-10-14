@@ -20,7 +20,7 @@ namespace TravelEase_WebService.Dtos.TrainSheduleManagemet
         public ScheduleService()
         {
             // Initialize the MongoDB collection for train schedules.
-            var client = new MongoClient("mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority"); // Replace with your MongoDB connection string
+            var client = new MongoClient("mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority"); // Replace with your MongoDB connection string
             var database = client.GetDatabase("eadprojectwdb");
 
             _scheduleCollection = database.GetCollection<Schedule>("Schedules"); // Replace "Schedules" with your collection name

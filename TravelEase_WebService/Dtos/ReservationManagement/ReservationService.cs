@@ -20,7 +20,7 @@ namespace TravelEase_WebService.Dtos.ReservationManagement
         public ReservationService()
         {
             // Initialize the MongoDB collection for reservations.
-            var client = new MongoClient("mongodb+srv://sugandhi:EP7ZKYIQ43cBQVDV@cluster0.amprpac.mongodb.net/?retryWrites=true&w=majority");
+            var client = new MongoClient("mongodb+srv://it20140298:eadpw123zx@eadcluster.jwo16r4.mongodb.net/?retryWrites=true&w=majority");
             var database = client.GetDatabase("eadprojectwdb");
             _reservationCollection = database.GetCollection<Reservation>("Reservations");
         }
