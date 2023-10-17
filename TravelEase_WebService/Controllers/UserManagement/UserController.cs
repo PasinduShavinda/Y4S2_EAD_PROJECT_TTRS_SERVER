@@ -95,5 +95,41 @@ namespace TravelEase_WebService.Controllers.UserManagement
 
             return Ok(acc);
         }
+
+        /// <summary>
+        /// Set the profile crated state - true
+        /// </summary>
+        [HttpPut("setprofile/{Nic}")]
+        public async Task<IActionResult> SetProfile(string Nic)
+        {
+            var profileSet = await _mongoDBService.SetProfileState(Nic);
+
+            if (profileSet)
+            {
+                return Ok(new { message = "Traveller profile state updated." });
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        /// <summary>
+        /// Set the profile crated state - false
+        /// </summary>
+        [HttpPut("setprofile2/{Nic}")]
+        public async Task<IActionResult> SetProfile2(string Nic)
+        {
+            var profileSet = await _mongoDBService.SetProfileState2(Nic);
+
+            if (profileSet)
+            {
+                return Ok(new { message = "Traveller account state updated." });
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }

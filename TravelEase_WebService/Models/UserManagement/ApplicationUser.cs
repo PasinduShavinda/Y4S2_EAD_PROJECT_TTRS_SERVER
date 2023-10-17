@@ -17,8 +17,7 @@ namespace TravelEase_WebService.Models.UserManagement
         public string Nic { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
         public bool IsRequestSent { get; set; } = false;
-
-
+        public bool IsProfileCreated { get; set; } = false;
     }
 }
 

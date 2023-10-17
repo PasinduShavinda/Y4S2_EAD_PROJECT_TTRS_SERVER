@@ -32,6 +32,8 @@ namespace TravelEase_WebService.Dtos.UserManagement
         public bool IsActive { get; set; }
 
         public bool IsRequestSent { get; set; }
+
+        public bool IsProfileCreated { get; set; }
     }
 }
 

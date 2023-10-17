@@ -76,9 +76,9 @@ namespace TravelEase_WebService.Services
         // DELETE: Delete a traveler profile by NIC.
         public async Task DeleteAsync(string NIC)
         {
-            FilterDefinition<TravellerProfileModel> filter = Builders<TravellerProfileModel>.Filter.Eq("NIC", NIC);
-            await _travellerProfilesCollection.DeleteOneAsync(filter);
-            return;
+            FilterDefinition<TravellerProfileModel> filter1 = Builders<TravellerProfileModel>.Filter.Eq("NIC", NIC);
+
+            await _travellerProfilesCollection.DeleteOneAsync(filter1);
         }
 
         // ACTIVATE TRAVELLER ACCOUNT: Activate a traveler's account.
@@ -146,6 +146,32 @@ namespace TravelEase_WebService.Services
             var result1 = await _registeredTravellerCollection.UpdateOneAsync(filter, update);
 
             return result1.ModifiedCount > 0;
+        }
+
+        // SET PROFILE CREATED OR NOT: This will set the state of the user profile.
+        public async Task<bool> SetProfileState(string Nic)
+        {
+            FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
+
+            UpdateDefinition<RegisteredTravellerModel> update = Builders<RegisteredTravellerModel>.Update
+                .Set("IsProfileCreated", true);
+
+            var result3 = await _registeredTravellerCollection.UpdateOneAsync(filter, update);
+
+            return result3.ModifiedCount > 0;
+        }
+
+        // SET PROFILE CREATED OR NOT: This will set the state of the user profile.
+        public async Task<bool> SetProfileState2(string Nic)
+        {
+            FilterDefinition<RegisteredTravellerModel> filter = Builders<RegisteredTravellerModel>.Filter.Eq("Nic", Nic);
+
+            UpdateDefinition<RegisteredTravellerModel> update = Builders<RegisteredTravellerModel>.Update
+                .Set("IsProfileCreated", false);
+
+            var result4 = await _registeredTravellerCollection.UpdateOneAsync(filter, update);
+
+            return result4.ModifiedCount > 0;
         }
     }
 }

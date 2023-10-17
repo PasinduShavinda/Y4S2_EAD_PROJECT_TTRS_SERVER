@@ -32,5 +32,6 @@ namespace TravelEase_WebService.Models.TravellerManagement
         public string RelationshipToTraveller { get; set; } = string.Empty;
         public string EmergencyContactNumber { get; set; } = string.Empty;
         public bool IsActive { get; set; }
+        public bool IsProfileCreated { get; set; } = true;
     }
 }
