@@ -123,7 +123,10 @@ namespace TravelEase_WebService.Controllers.UserManagement
             {
 
                 var user = await _userManager.FindByEmailAsync(request.Email);
-                if (user is null) return new LoginResponse { Message = "Invalid email/password", Success = false };
+                if (user is null) return new LoginResponse { Message = "User Not Found", Success = false };
+
+                var signInResult = await _userManager.CheckPasswordAsync(user, request.Password);
+                if (!signInResult) return new LoginResponse { Message = "Incorrect Password", Success = false };
 
                 var claims = new List<Claim>
             {
