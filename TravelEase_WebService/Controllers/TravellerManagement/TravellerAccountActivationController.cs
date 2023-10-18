@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TravelEase_WebService.Controllers.TravellerManagement
 {
-    [Authorize(Roles = "Back Officer")]
     [ApiController]
     [Route("api/v1/traveller/account")]
     public class ProfileActivationController : Controller
@@ -29,6 +28,7 @@ namespace TravelEase_WebService.Controllers.TravellerManagement
         /// <param name="Nic">The NIC (National Identity Card) of the traveler to activate.</param>
         /// <returns>An IActionResult representing the result of the activation operation.</returns>
         [HttpPut("activate/{Nic}")]
+        [Authorize(Roles = "Back Officer")] 
         public async Task<IActionResult> Activate(string Nic)
         {
             var activated = await _mongoDBService.ActivateAsync(Nic);
@@ -49,6 +49,7 @@ namespace TravelEase_WebService.Controllers.TravellerManagement
         /// <param name="Nic">The NIC (National Identity Card) of the traveler to deactivate.</param>
         /// <returns>An IActionResult representing the result of the deactivation operation.</returns>
         [HttpPut("deactivate/{Nic}")]
+        [Authorize(Roles = "Back Officer, Traveller")]
         public async Task<IActionResult> Deactivate(string Nic)
         {
             var deactivated = await _mongoDBService.DeactivateAsync(Nic);
