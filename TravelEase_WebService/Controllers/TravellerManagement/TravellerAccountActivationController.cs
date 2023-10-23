@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace TravelEase_WebService.Controllers.TravellerManagement
 {
-    [Authorize(Roles = "Back Officer")]
     [ApiController]
     [Route("api/v1/traveller/account")]
     public class ProfileActivationController : Controller
