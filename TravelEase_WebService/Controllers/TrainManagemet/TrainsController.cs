@@ -8,11 +8,15 @@
 using Microsoft.AspNetCore.Mvc;
 using TravelEase_WebService.TrainModels;
 using TravelEase_WebService.Dtos.TrainService;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace TravelEase_WebService.TrainController
 {
-    [Route("api/[controller]")]
+    //[Authorize(Roles = "Back Officer")]
     [ApiController]
+    [Route("api/[controller]")]
+    
     public class TrainController : ControllerBase
     {
         private readonly ITrainService _trainService;

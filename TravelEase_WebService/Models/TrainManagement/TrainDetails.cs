@@ -28,10 +28,10 @@ namespace TravelEase_WebService.TrainModels
         public string Arrivaltime { get; set; }
 
         // Reservation details for class 1 (e.g., availability).
-        public string class1reservation { get; set; }
+        public int class1reservation { get; set; }
 
         // Reservation details for class 2 (e.g., availability).
-        public string class2reservation { get; set; }
+        public int class2reservation { get; set; }
 
         // An array of stop stations for the train's route.
         public string[] StopStations { get; set; }

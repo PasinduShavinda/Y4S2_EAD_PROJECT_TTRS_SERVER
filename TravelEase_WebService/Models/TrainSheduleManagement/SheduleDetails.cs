@@ -18,8 +18,8 @@ namespace TravelEase_WebService.SheduleModels
         public string ArrivalCity { get; set; }
         public string Departuretime { get; set; }
         public string Arrivaltime { get; set; }
-        public string class1reservation { get; set; }
-        public string class2reservation { get; set; }
+        public int class1reservation { get; set; }
+        public int class2reservation { get; set; }
         public int reserved1seates { get; set; }
         public int reserved2seates { get; set; }
         public string[] StopStations { get; set; }

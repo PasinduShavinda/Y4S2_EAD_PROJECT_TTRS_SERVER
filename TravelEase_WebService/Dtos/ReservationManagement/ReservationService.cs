@@ -49,7 +49,7 @@ namespace TravelEase_WebService.Dtos.ReservationManagement
         {
             var filter = Builders<Reservation>.Filter.Eq(r => r.Id, reservation.Id);
             var update = Builders<Reservation>.Update
-                .Set(r => r.Seatcount1, reservation.Seatcount2)
+                .Set(r => r.Seatcount1, reservation.Seatcount1)
                 .Set(r => r.Seatcount2, reservation.Seatcount2)
                 .Set(r => r.TrainName, reservation.TrainName);
 

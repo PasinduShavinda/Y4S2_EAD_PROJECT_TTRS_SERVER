@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using TravelEase_WebService.SheduleModels;
 using TravelEase_WebService.Dtos.TrainSheduleManagemet;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace TravelEase_WebService.SheduleController
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ScheduleController : ControllerBase
@@ -54,14 +57,23 @@ namespace TravelEase_WebService.SheduleController
         [HttpDelete("{id}")]
         public IActionResult DeleteTrain(Guid id)
         {
-            var existingshedule = _sheduleService.GetSheduleById(id);
-            if (existingshedule == null)
+            var existingSchedule = _sheduleService.GetSheduleById(id);
+            if (existingSchedule == null)
             {
                 return NotFound();
             }
-            _sheduleService.DeleteShedule(id);
-            return NoContent();
+
+            if (existingSchedule.reserved1seates == 0 && existingSchedule.reserved2seates == 0)
+            {
+                _sheduleService.DeleteShedule(id);
+                return NoContent();
+            }
+            else
+            {
+                return BadRequest("Cannot delete the schedule because reserved seats are not 0.");
+            }
         }
+
         [HttpGet("GetByTrainId/{trainId}")]
         public ActionResult<IEnumerable<Schedule>> GetScheduleByTrainId(string trainId)
         {

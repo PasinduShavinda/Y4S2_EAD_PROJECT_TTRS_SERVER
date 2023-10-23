@@ -8,11 +8,15 @@
 using Microsoft.AspNetCore.Mvc;
 using TravelEase_WebService.ReservationModels;
 using TravelEase_WebService.Dtos.ReservationManagement;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace TravelEase_WebService.Controllers.ReservationManagement
 {
+    //[Authorize(Roles = "Travel Agent,Traveller")]
     [Route("api/[controller]")]
     [ApiController]
+    
     public class ReservationController : ControllerBase
     {
         private readonly IReservationService _reservationService;

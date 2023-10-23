@@ -51,7 +51,16 @@ namespace TravelEase_WebService.Dtos.TrainSheduleManagemet
             var filter = Builders<Schedule>.Filter.Eq(s => s.Id, schedule.Id);
             var update = Builders<Schedule>.Update
                 .Set(s => s.reserved1seates, schedule.reserved1seates)
-                .Set(s => s.reserved2seates, schedule.reserved2seates);
+                .Set(s => s.reserved2seates, schedule.reserved2seates)
+                .Set(s => s.Date, schedule.Date)
+                .Set(s => s.ArrivalCity, schedule.ArrivalCity)
+                .Set(s => s.Arrivaltime, schedule.Arrivaltime)
+                .Set(s => s.DepartureCity, schedule.DepartureCity)
+                 .Set(s => s.Departuretime, schedule.Departuretime)
+                .Set(s => s.StopStations, schedule.StopStations)
+                .Set(s => s.TrainName, schedule.TrainName)
+                .Set(s => s.class1reservation, schedule.class1reservation)
+                .Set(s => s.class2reservation, schedule.class2reservation);
 
             _scheduleCollection.UpdateOne(filter, update);
         }
